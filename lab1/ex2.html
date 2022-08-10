@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap"
+            rel="stylesheet">
+        <title>Трехколоночный макет (вариант 1)</title>
+        <style type="text/css">
+            .layout {
+                overflow: hidden;
+                font-family: 'Comfortaa';
+            }
+            .leftCol {
+                background: lightblue;
+                height: 20px;
+                margin: 0 400px 0 0;
+            }
+            .centerCol {
+                background: tan;
+                float: right;
+                width: 300px;
+                height: 20px;
+                margin: -20px 100px 0 0;
+            }
+            .rightCol {
+                background: pink;
+                float: right;
+                width: 100px;
+                height: 20px;
+                margin: -20px 0 0 0;
+            }
+            @media screen and (max-width: 600px) {
+                .leftCol {
+                    width: 100%;
+                }
+                .centerCol {
+                    float: none;
+                    width: 100%;
+                    margin: 0 0 0 0;
+                }
+                .rightCol {
+                    float: none;
+                    width: 100%; 
+                    margin: 0 0 0 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="layout">
+            <div class="leftCol">Колонка 1</div> 
+            <div class="centerCol">Колонка 2</div> 
+            <div class="rightCol">Колонка 3</div>
+        </div>
+    </body>
+</html>

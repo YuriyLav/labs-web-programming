@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap"
+            rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
+        <title>Трехколоночный макет (вариант 1)</title>
+        <style type="text/css">
+            .layout {
+                overflow: hidden;
+                font-family: 'Comfortaa';
+            }
+            .leftCol {
+                background: lightblue;
+                margin-right: 400px;
+            }
+            .centerCol {
+                background: tan;
+                width: 300px;
+                float: right;
+            }
+            .rightCol {
+                background: pink;
+                width: 100px;
+                float: right;
+            }
+            @media screen and (max-width: 500px) {
+                .layout {
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+                .leftCol {
+                    /*                    float: none;
+                                        width: 100%;*/
+                    display: none;
+                }
+                .centerCol {
+                    width: 100%;
+                }
+                .rightCol {
+                    display: none;
+                    /*                    float: none;
+                                        width: 100%;*/
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="layout">
+            <div class="rightCol">Колонка 3</div>
+            <div class="centerCol">
+                <form name="TestForm" id="myForm" method="POST" action="index.php">
+                    Введите номер
+                    <input type="text" name="searchString" value="" />
+                    <p><textarea
+                            rows="5"
+                            cols="35"
+                            name="text"
+                            minlength="20"
+                            maxlength="200"
+                            placeholder="Введите текст длиной от 20 до 200 символов"
+                            ></textarea></p>
+                    <div>
+                        <p>Выберите граждантсво(РФ обязательно):</p>
+                        <input type="radio" id="contactChoice1"
+                               name="contact1">
+                        <label for="contactChoice1">РФ</label>
+
+                        <input type="radio" id="contactChoice2"
+                               name="contact2" >
+                        <label for="contactChoice2">США</label>
+
+                        <input type="radio" id="contactChoice3"
+                               name="contact3">
+                        <label for="contactChoice3">Китай</label>
+                        <input type="submit" name="Submit" value="Отправить"/>
+                    </div>
+                </form>
+            </div>
+            <div class="leftCol">Колонка 1</div> 
+        </div>
+        <script>
+            $('#myForm').validate({
+                rules:{
+                    searchString:{
+                        required: true,
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
